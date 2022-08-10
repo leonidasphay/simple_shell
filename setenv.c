@@ -1,5 +1,3 @@
-#include "builtins.h"
-#include "general.h"
 
 /**
 * bin_setenv - sets environment variable
@@ -47,3 +45,51 @@ bin_env(info);
 }
 return (info->status);
 }
+
+/**
+* get_dict_node - retrieve a node by key
+* @head:dict
+* @key:entry key
+* Return: node or NULL
+*/
+
+dict_t *get_dict_node(dict_t *head, const char *key)
+{
+if (!head)
+return (NULL);
+
+if (!_strcmp(head->key, key))
+return (head);
+return (get_dict_node(head->next, key));
+}
+
+/**
+* add_dict_node_end - adds nodes
+* @headptr:pointer
+* @key:entry key
+* @val: entry val
+* Return:pointer
+*/
+
+dict_t *add_dict_node_end(dict_t **headptr, const char *key, const char *val)
+{
+dict_t *new;
+
+if (!headptr)
+return (NULL);
+
+if (*headptr)
+return (add_dict_node_end(&((*headptr)->next), key, val));
+
+new = malloc(sizeof(dict_t));
+if (!new)
+return (NULL);
+
+new->key = _strdup(key);
+new->val = _strdup(val);
+new->next = NULL;
+
+*headptr = new;
+return (new);
+}
+
