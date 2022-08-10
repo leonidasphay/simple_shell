@@ -6,7 +6,7 @@
  * @msg: String to calculate length
  *
  * Return: Length of the string
- **/
+ */
 int _strlen(char *msg)
 {
 	int i;
@@ -66,7 +66,7 @@ char *_strcpy(char *dest, char *src)
  * @str: String to copy
  *
  * Return: String copied
- **/
+ */
 char *_strdup(char *str)
 {
 	int size, i;
