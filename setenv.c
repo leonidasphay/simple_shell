@@ -43,7 +43,7 @@ info->status = EXIT_SUCCESS;
 }
 else
 {
-__env(info);
+bin_env(info);
 }
 return (info->status);
 }
