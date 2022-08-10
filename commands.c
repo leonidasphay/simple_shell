@@ -10,7 +10,7 @@
  * @arguments: Commands and arguments to execute
  * @info: General information about the shell
  * @buff: Line readed
- **/
+ */
 void analyze(char **arguments, general_t *info, char *buff)
 {
 	char *cmd;

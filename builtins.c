@@ -8,7 +8,7 @@
  *
  * Return: If the command passed is a builtins
  * return _TRUE if not return _FALSE
- **/
+ */
 int builtins(general_t *info, char **arguments)
 {
 	int status;
@@ -30,13 +30,15 @@ int builtins(general_t *info, char **arguments)
  *
  * Return: If the command is an actual builtin, return _TRUE
  * if not _FALSE
- **/
+ */
 int check_builtin(general_t *info, char **arguments)
 {
 	int i, size;
 	builtin_t builtins[] = {
 		{"exit", bin_exit},
-		{"env", bin_env}
+		{"env", bin_env},
+		{"setenv", bin_setenv},
+		{"unsetenv", bin_unsetenv}
 	};
 
 	size = sizeof(builtins) / sizeof(builtins[0]);
